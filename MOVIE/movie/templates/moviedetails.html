@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+  <div class="text-center">
+    <h2 class="mt-4">Movie Details</h2>
+  </div>
+
+  <!-- CARD -->
+  <div class="card mx-auto" style="width: 18rem;">
+    <img src="{{ d.image.url }}" height="400px" width="350px" alt="{{ d.title }}">
+  </div>
+
+  <div class="moviedit text-center">
+    <h3>{{ d.title }}</h3>
+    <p>{{ d.desc }}</p>
+    <p>{{ d.year }}</p>
+  </div>
+
+  <div class="text-center mt-3">
+    <a href="{% url 'film:movieedit' d.id %}" class="btn btn-primary">Edit</a>
+
+    <a href="{% url 'film:deletemovie' d.id %}" class="btn btn-danger">Delete</a>
+  </div>
+</div>
+{% endblock %}
+
+
+
+

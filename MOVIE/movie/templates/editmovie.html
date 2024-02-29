@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  <div class="container mt-4">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <h3 class="text-center mb-4">Edit Movie Details</h3>
+      <table class="table">
+        {{ form.as_table }}
+      </table>
+      <div class="text-center">
+        <input type="submit" class="btn btn-primary" value="Update">
+      </div>
+    </form>
+  </div>
+{% endblock %}
