@@ -47,8 +47,8 @@ def addmovie(request):
 
 
 def movieedit(request, p):
-    movie = Movie.objects.get(id=id)
-    form=MovieForm(instance=movie)
+    movie = Movie.objects.get(id=p)
+    form=Movieform(instance=movie)
     if request.method == "POST":
         form = Movieform(request.POST, request.FILES, instance=movie)
         if form.is_valid():
